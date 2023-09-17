@@ -43,3 +43,4 @@ char sig1[13] = "helo7o";
 char sig2[] = "heloo";
 char *res1 =  ft_strcat(sig1, sig2);
 printf("%s",sig1);
+}
