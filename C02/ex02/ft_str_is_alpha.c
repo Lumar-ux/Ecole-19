@@ -13,37 +13,26 @@
 #include<stdio.h>
 int ft_str_is_alpha(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if(str[i] == '\0')
+	if (str[i] == '\0' )
 	{
-		return(1);
+		return (1);
 	}
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-			if(str[i] > 64  && str[i] < 91 )
-			{
-			return(1);
-			}
-			if(str[i] > 96  && str[i] < 123 )
-			{
-			return(1);
-			}
-			else
-			{
-			return(0);	
-			}
-			str++;	
-	}
-return(1);
-}	
-int	main(void)
+		if ((str[i] >= 'A' && str [i] <= 'Z')
+			|| (str [i] >= 'a' && str [i] <= 'z'))
+			i++;
+		else
+			return (0);
+	}	
+	return (1);
+}
+int	main()
 {
-char str0[] = "Hello World";
-char str1[] = "HelloWorld";
-char str2[] = "456";
-printf("%d", ft_str_is_alpha(str0));
-printf("%d", ft_str_is_alpha(str1));
-printf("%d", ft_str_is_alpha(str2));
+	printf("%d", ft_str_is_alpha("abcdefg48hijkl"));
+	printf("\n%d", ft_str_is_alpha("abc1defghijkl"));
+	printf("\n%d", ft_str_is_alpha("-_134556efghij67"));
 }
