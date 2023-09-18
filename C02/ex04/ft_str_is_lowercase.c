@@ -27,7 +27,7 @@ int main(void)
 {
 char str0[] = "deiceicneic";
 char str1[] = "IBUHIBIBIB";
-char str2[] = "456";
+char str2[] = "456ieniINNIIIN";
 printf("%d", ft_str_is_lowercase(str0));
 printf("%d", ft_str_is_lowercase(str1));
 printf("%d", ft_str_is_lowercase(str2));
