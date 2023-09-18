@@ -7,13 +7,15 @@ void ft_wr(char c)
 void ft_putnbr(long int nb)
 {
 	int number;
-	if(nb == number/* || nbn == number*/ )
+	if(nb < 0)
 	{
 		ft_wr('-');
-	//	ft_putnbr(2147483647);
 		number = (unsigned int)(-nb);
 	}
+	else
+	{
 	number = nb;
+	}
 	if(number > 9)
 	{
 		ft_putnbr(number / 10);
