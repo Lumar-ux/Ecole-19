@@ -19,17 +19,20 @@ void	ft_wr(char c)
 }*/
 
 int	main(int argc, char *argv[])
-{
+{	
 	int	i;
-	int ag;
+	char *ag;
 
 	i = 0;
-	*ag = argv[i];
-
-	/* while (ag != '\0' && argc)
-	{*/
-	write (1, &ag\n, e);
-
-//	ft_wr ('\n');
+	ag = &argv[0];
+	if(argc > 0)
+	{
+	 while (ag[i] != '\0')
+	{
+		write (1, &ag[i], 1);
+		i++;
+		}
+	write (1, "\n", 1);
+	}
 	return (0);
 }
