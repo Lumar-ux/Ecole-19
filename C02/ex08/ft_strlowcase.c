@@ -16,10 +16,11 @@ char    *ft_strlowcase(char *str)
          }
  return(str);
  }
-
- int main(void)
+int main(void)
  {
  char str1[] = "IBUHIBIBIB";
+ char str2[] = "fefeIBUHIBIBIB";
  printf("%s ", ft_strlowcase(str1));
+ printf("/n%s ", ft_strlowcase(str2));
  return(0);
  }
