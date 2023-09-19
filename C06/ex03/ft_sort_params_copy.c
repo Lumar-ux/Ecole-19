@@ -28,7 +28,7 @@ int diff(char *n1, char *n2)
     }
     return (*n1 - *n2);
 }
-void ft_sort_params(int argc, char **argv[])
+void ft_sort_params(int argc, char *argv[])
 {
    int i;
     int n;
@@ -58,14 +58,14 @@ void ft_sort_params(int argc, char **argv[])
             i = 0;
 		}
         //ft_wr(argc, argv);
-    if(argc > 9 && argv[n][i] > 9)
+    if(argv[n][i] > 9)
 	{
-		ft_sort_params(&argc / 10 , &argv[n][i] / 10);
-		ft_sort_params(&argc / 10, &argv[n][i] % 10);
+		ft_sort_params(argc / 10 , argv[n][i] / 10);
+		ft_sort_params(argc / 10, argv[n][i] % 10);
 	}
 	else
 	{
-		ft_wr(&argc, &argv[n][i] + 48);
+		ft_wr(argc, argv[n][i] + 48);
 	}
     //return (0);
 }
