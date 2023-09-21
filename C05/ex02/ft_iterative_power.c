@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 
 int ft_iterative_power(int nb, int power)
 {
@@ -23,7 +23,7 @@ if(nb == 0)
 return (set_nb);
 }
 
-int main(void)
+/*int main(void)
 {
      int nb;
      int pui;
@@ -33,4 +33,4 @@ int main(void)
     
     printf("%d", ft_iterative_power(nb, pui));
     return (0);
-}
+}*/
