@@ -23,21 +23,18 @@ char	*ft_strstr(char *str, char *to_find)
 	//char *diff = str;
 while((i <= longeur(str)) - (longeur(to_find))) //((*to_find != '\0') && (*to_find))
 {
-	//i++;
 	if(to_find[i] == str[i+j])
 	{
-		//j = 1;
 		while(j < longeur(to_find) && ok == 1)
 		{
-			//j++;
 			if(to_find[j] != str[i+j])
-			{
-			ok = 0;
-			}
+				{
+				ok = 0;
+				}
 			if(to_find[j] == str[i+j] && j == longeur(to_find) - 1)
-			{	
-			return &str[i];
-			}
+				{	
+				return &str[i];
+				}
 			j++;
 		}
 		ok = 1;
@@ -48,8 +45,8 @@ return NULL;
 }
 int main(void)
 {
-char sig1[] = "Ecole 19, aume Ecole 42";
-char sig2[] = "aime";
+char sig1[] = "Ecole 19, aime Ecole 42";
+char sig2[] = "aume";
 char *res1 =  ft_strstr(sig1, sig2);
 if(res1 != NULL)
 {
@@ -59,4 +56,5 @@ else
 {
 printf("NULL");
 }
+return (0);
 }
