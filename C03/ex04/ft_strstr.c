@@ -1,63 +1,62 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lmaroy <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 19:52:00 by lmaroy            #+#    #+#             */
-/*   Updated: 2023/09/14 19:21:47 by lmaroy           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
-int longeur(char *c)
+int	longeur(char *c)
 {
-	int i; 
+	int	i;
 
 	i = 0;
-		while(c[i] != '\0')
-		{
+	while (c[i] != '\0')
+	{
 		i++;
-		}	
+	}
 	return (i);
 }
-char *ft_strstr(char *str, char *to_find)
+
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i = 0;
 	int j = 0;
 	int ok = 1;
 
-	char *diff = str;
-while((i < longeur(str)) - (longeur(to_find))) //((*to_find != '\0') && (*to_find))
+	//char *diff = str;
+while((i <= longeur(str)) - (longeur(to_find))) //((*to_find != '\0') && (*to_find))
 {
-	i++;
-	if(to_find[i] == to_find[0])
+	//i++;
+	if(to_find[i] == str[i+j])
 	{
-		while(j < longeur(to_find) && ok == 1 )
+		//j = 1;
+		while(j < longeur(to_find) && ok == 1)
 		{
-			
-		if(to_find[i+j] != to_find[j])
-		ok = 0;
-
-		if(to_find[i+j] == to_find[j] && j == (longeur(to_find) - 1))	
-		j++;
-			return &to_find[i];
+			//j++;
+			if(to_find[j] != str[i+j])
+			{
+			ok = 0;
+			}
+			if(to_find[j] == str[i+j] && j == longeur(to_find) - 1)
+			{	
+			return &str[i];
+			}
+			j++;
 		}
 		ok = 1;
 	}
-
+	i++;
 }
-return(to_find);
+return NULL;
 }
-
-
 int main(void)
 {
-char sig1[] = "Ecole 19, aime Ecole 42";
+char sig1[] = "Ecole 19, aume Ecole 42";
 char sig2[] = "aime";
 char *res1 =  ft_strstr(sig1, sig2);
+if(res1 != NULL)
+{
 printf("%s", res1);
+}
+else
+{
+printf("NULL");
+}
 }
