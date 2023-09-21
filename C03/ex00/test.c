@@ -1,20 +1,15 @@
 #include <string.h>
 #include <stdio.h>
 
-int ft_strcmp(char *s1, char *s2)
+char	*ft_strstr(char *str, char *to_find)
 {
-return strcmp(s1, s2);
+return strstr(str, to_find);
 }
 
 int main(void)
 {
-char sig1[] = "heloo";
-char sig2[] = "heloo";
-char dig1[] = "heLLoo";
-char dig2[] = "helloo";
-//char n = 2;
-int res1 =  ft_strcmp(sig1, sig2);
-int res2 =  ft_strcmp(dig1, dig2);
-printf("%d", res1);
-printf("%d", res2);
+char sig1[] = "Ecole 19, aime Ecole 42";
+char sig2[] = "aime";
+char *res1 =  ft_strstr(sig1, sig2);
+printf("%s", res1);
 }

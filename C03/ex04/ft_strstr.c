@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmaroy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/17 22:51:16 by lmaroy            #+#    #+#             */
+/*   Updated: 2023/09/17 23:00:06 by lmaroy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -20,10 +31,9 @@ char	*ft_strstr(char *str, char *to_find)
 	int j = 0;
 	int ok = 1;
 
-	//char *diff = str;
-while((i <= longeur(str)) - (longeur(to_find))) //((*to_find != '\0') && (*to_find))
+while(str[i] != '\0')
 {
-	if(to_find[i] == str[i+j])
+	if(to_find[j] == str[i])
 	{
 		while(j < longeur(to_find) && ok == 1)
 		{
@@ -46,8 +56,9 @@ return NULL;
 int main(void)
 {
 char sig1[] = "Ecole 19, aime Ecole 42";
-char sig2[] = "aume";
+char sig2[] = "aime";
 char *res1 =  ft_strstr(sig1, sig2);
+
 if(res1 != NULL)
 {
 printf("%s", res1);
