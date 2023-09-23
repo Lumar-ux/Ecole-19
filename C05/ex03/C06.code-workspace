@@ -14,7 +14,17 @@
 		},
 		{
 			"path": "../../C03"
+		},
+		{
+			"path": "../../C00_O"
+		},
+		{
+			"path": "../../C00"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"chrono": "c"
+		}
+	}
 }

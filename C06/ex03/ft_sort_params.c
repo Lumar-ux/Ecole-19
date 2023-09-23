@@ -1,24 +1,17 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-void ft_wr(int argc, char *argv[])
+void ft_wr(char *str)
 {
     int i;
-    int n;
-
-    n = 1;
-while(n < argc )
-    {
-    i = 0;
-    while (argv[n][i] != '\0')
+    
+i = 0;
+    while (str[i] != '\0')
         {
-        write (1, &argv[n][i], 1);
+        write (1, &str[i], 1);
 		i++;
 		}
-
     write (1, "\n", 1);
-    n++;
-    }
 }
 int diff(char *n1, char *n2)
 {
@@ -32,37 +25,30 @@ int diff(char *n1, char *n2)
 void ft_sort_params(int argc, char *argv[])
 {
    int i;
-    int n;
-    int temp;
+    char *temp;
 
-    n = 1;
-    while(n < argc - 1)
+    i = 1;
+    while(i < argc - 1)
     {
-    i = 0;
-    while (argv[n][i] != '\0')
-        {
-                 if ((argv[n][i] >= 32) && (argv[n][i] <= 127) 
-                    && diff(&argv[n][i], &argv[n + 1][i]) > 0)
+                 if ((diff(argv[i], argv[i + 1])) > 0)
                     {
-                    temp = argv[n][i];
-                    argv[n][i] = argv[n + 1][i];
-                    argv[n + 1][i] = temp;
-                    n = 0;
-                    } 
-                    i++;   
-                    n++;
-            }
-            i = 0;
+                    temp = argv[i];
+                    argv[i] = argv[i + 1];
+                    argv[i + 1] = temp;
+                    i = 0;
+                    }
+                    else
+                    i++;  
 		}
-   ft_wr(argc, argv);
+        i = 1;
+        while(i < argc)
+        {
+   ft_wr(argv[i]);
+   i++;
+        }
 }
 int main(int argc, char *argv[])
 {
 ft_sort_params(argc, argv);
 return (0);
 }
-
-/*if((argv[n][i] >= 33) && (argv[n][i] <= 126))
-            {*/
-               /* if(argv[n + 1][i] > argv[n][i])
-                 n++;*/

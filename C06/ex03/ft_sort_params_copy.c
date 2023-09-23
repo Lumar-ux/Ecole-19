@@ -5,7 +5,6 @@ void ft_wr(int argc, char *argv[])
 {
     int i;
     int n;
-
     n = 1;
 while(n < argc )
     {
@@ -33,11 +32,13 @@ void ft_sort_params(int argc, char *argv[])
 {
    int i;
     int n;
+    //int j;
     int temp;
 
     n = 1;
     while(n < argc - 1)
     {
+    //n = j + 1;
     i = 0;
     while (argv[n][i] != '\0')
         {
@@ -48,24 +49,36 @@ void ft_sort_params(int argc, char *argv[])
                     argv[n][i] = argv[n + 1][i];
                     argv[n + 1][i] = temp;
                     n = 0;
+                    //n++;
+                    //j++;
                     } 
                     i++;   
                     n++;
             }
             i = 0;
 		}
-    if(argv[n][i] > '9')
+        //ft_wr(argc, argv);
+    if(argv[n][i] > 9)
 	{
-		ft_sort_params(argc / 10, argv);
-		ft_sort_params(argc % 10, argv);
+		ft_sort_params(argc / 10 , argv[n][i] / 10);
+		ft_sort_params(argc / 10, argv[n][i] % 10);
 	}
 	else
 	{
-		ft_wr(argc, argv);
+		ft_wr(argc, argv[n][i] + 48);
 	}
+    //return (0);
 }
 int main(int argc, char *argv[])
 {
-ft_sort_params(argc, argv);
+    int n;
+    int i;
+
+ft_sort_params(argc, argv[n][i]);
 return (0);
 }
+
+/*if((argv[n][i] >= 33) && (argv[n][i] <= 126))
+            {*/
+               /* if(argv[n + 1][i] > argv[n][i])
+                 n++;*/

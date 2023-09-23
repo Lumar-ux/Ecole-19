@@ -6,33 +6,28 @@
 /*   By: lmaroy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:33:50 by lmaroy            #+#    #+#             */
-/*   Updated: 2023/09/18 19:22:45 by lmaroy           ###   ########.fr       */
+/*   Updated: 2023/09/18 23:09:39 by lmaroy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-/*
+
 void	ft_wr(char c)
 {
 	write (1, &c, 1);
-}*/
+}
 
-int	main(int argc, char *argv[])
-{	
+int	main(int argc, char **argv)
+{
 	int	i;
-	char *ag;
 
 	i = 0;
-	ag = &argv[0];
-	if(argc > 0)
+	while (argv[0][i] != '\0' && argc)
 	{
-	 while (ag[i] != '\0')
-	{
-		write (1, &ag[i], 1);
+		ft_wr(argv[0][i]);
 		i++;
-		}
-	write (1, "\n", 1);
 	}
+	ft_wr ('\n');
 	return (0);
 }
