@@ -4,7 +4,7 @@
 int ft_is_prime(int nb)
 {
     //int check;
-    if (nb != 2 && nb != 1)
+    if (nb != 0 && nb != 1)
     {
     if ((((nb % 1) == 0) && ((nb % nb) == 0) && (nb % (2) != 0) && ((nb % (3) != 0))))
     { 
