@@ -1,43 +1,29 @@
 #include <stdio.h>
-#include <unistd.h>
 
-int ft_find_next_prime(int nb)
-{
-    int div;
-
-    div = 2;
-
-    while(1)
-    {
-        if (nb > 1)
-        {
-            while (div < nb)
-            {
-                if (nb % div == 0)
-                {
-                    break;
-                }
-                div++;
-            }
-
-            if (div == nb)
-            {
-                return nb;
-            }
-        }
-
-        nb++;
-        div = 2;
+int est_premier(int n) {
+    if (n <= 1) {
+        return 0; // Faux (non premier)
     }
+
+    int i = 2;
+    int estPremier = 1; // On suppose que le nombre est premier
+
+    while (i * i <= n && estPremier) {
+        if (n % i == 0) {
+            estPremier = 0; // Faux (non premier)
+        }
+        i++;
+    }
+
+    return estPremier; // Renvoie 1 si premier, 0 sinon
 }
 
-int main()
-{
-    int nb;
-    int res1;
-
-    nb = 710;
-    res1 = ft_find_next_prime(nb);
-    printf("%d", res1);
+int main(void) {
+    int num = 17;  // Exemple : Vérifier si 17 est premier
+    if (est_premier(num)) {
+        printf("%d est premier\n", num);
+    } else {
+        printf("%d n'est pas premier\n", num);
+    }
     return 0;
 }
