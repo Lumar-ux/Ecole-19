@@ -2,24 +2,22 @@
 
 int est_premier(int n) {
     if (n <= 1) {
-        return 0; // Faux (non premier)
+        return 0;
     }
 
     int i = 2;
-    int estPremier = 1; // On suppose que le nombre est premier
-
+    int estPremier = 1;
     while (i * i <= n && estPremier) {
         if (n % i == 0) {
-            estPremier = 0; // Faux (non premier)
+            estPremier = 0; 
         }
         i++;
     }
 
-    return estPremier; // Renvoie 1 si premier, 0 sinon
-}
+    return estPremier;
 
 int main(void) {
-    int num = 17;  // Exemple : Vérifier si 17 est premier
+    int num = 17;
     if (est_premier(num)) {
         printf("%d est premier\n", num);
     } else {
