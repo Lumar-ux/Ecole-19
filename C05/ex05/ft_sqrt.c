@@ -3,7 +3,7 @@
 
 int ft_sqrt(int nb)
 {
-    int mul;
+    long int mul;
     //int i;
     long int covnb;
     //long int mulsup;
