@@ -42,7 +42,7 @@ int ft_find_next_prime(int nb)
 
 int main() 
 {
-    int nb = 1884748364;
+    int nb = 1678;
     int res1 = ft_find_next_prime(nb);
     printf("%d",res1);
     return 0;
