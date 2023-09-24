@@ -3,46 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmaroy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lmaroy <lmaroy@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 13:24:06 by lmaroy            #+#    #+#             */
-/*   Updated: 2023/09/18 19:04:20 by lmaroy           ###   ########.fr       */
+/*   Created: 2023/09/24 15:27:22 by lmaroy            #+#    #+#             */
+/*   Updated: 2023/09/24 18:32:26 by lmaroy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
-void ft_wr(char c)
+
+void    ft_wr(char c)
 {
-	 write(1, &c, 1);
+    write(1, &c, 1);
 }
-void ft_putnbr(long int nb)
+
+void    ft_putnbr(int nb)
 {
-	int number;
-	if(nb < 0)
-	{
-		ft_wr('-');
-		number = (unsigned int)(-nb);
-	}
-	else
-	{
-	number = nb;
-	}
-	if(number > 9)
-	{
-		ft_putnbr(number / 10);
-		ft_putnbr(number % 10);
-	}
-	else
-	{
-		ft_wr(number + 48);
-	}
+    int number;
+
+    if (nb == -2147483648)
+    {
+        write(1, "-2", 2);
+        nb = 147483648;
+    }
+    if (nb < 0)
+    {
+        ft_wr('-');
+        number = (unsigned int)(-nb);
+    }
+    else
+    {
+        number = nb;
+    }
+    if (number > 9)
+    {
+        ft_putnbr(number / 10);
+        ft_putnbr(number % 10);
+    }
+    else
+    {
+        ft_wr(number + 48);
+    }
 }
 int main(void)
 {
-//	int nbn;
-	int nb = -922;
-	
-   //	ft_putnbr(nbn);
-	ft_putnbr(nb);
-	return (0);
+//  int nb = -5;
+
+//ft_putnbr(21478);
+ft_putnbr(-2147483648);
+    return (0);
 }
