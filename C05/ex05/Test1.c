@@ -10,12 +10,12 @@ int ft_sqrt(int nb)
  j = 1;
  while (nb > 0)
  {
-    j++;
-    i = i + 2;
-    if (nb == 0)
+    if ((nb % j) == 0)
     {
     return (j);
     }
+    j++;
+    i = i + 2;
  }
  return (0);
 }
