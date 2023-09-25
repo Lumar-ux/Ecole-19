@@ -18,23 +18,18 @@ char *ft_strdup(char *src)
 {
    char *dest;
    char *som;
-   int i;
-   
-   i = 0;
+
    som = dest;
    dest = malloc(ft_strlen(src + 1) * sizeof(char));
    if (!dest)
    {
     return (NULL);
    }
-   while (*dest[i] != '\0')
-	{
-		i++;
-	}
-   if (*src[i] != '\0')
+   if (*src != '\0')
    {
-    *dest[i] = *src[i];
-    i++;
+    *dest = *src;
+    dest++;
+    src++;
    }
    *dest = '\0';
    return (som);
