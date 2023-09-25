@@ -5,32 +5,31 @@
 
 int *ft_range(int min, int max)
 {
-    int tab;
+    int *tab;
     int i;
 
     i = 0;
-    tab[] = max - min;
-if (min < max)
+    tab = max - min;
+if (min >= max)
 {
     return (NULL);
 }
-tab = malloc((min) + 1 * sizeof(int));
-if (min == max)
+tab = malloc((min) * sizeof(int));
+if (tab == NULL)
 {
     return (NULL);
 }
-while (i < max)
+while (min < max)
 {
-    tab[i];
+    tab[i] = min;
     i++;
-    tab++;
+    min++;
 }
 return (tab);
 }
 
 int main()
 {
-    //int tab[2] = {1,10};
     int *res1 = ft_range(1, 10);
     printf("%d\n", *res1);
     free(res1);
