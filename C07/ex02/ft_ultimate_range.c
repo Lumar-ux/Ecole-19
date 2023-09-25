@@ -34,13 +34,11 @@ int main()
     int i;
     int min;
     int max;
-    int nb;
-    //int size;
+    int *nb[];
     
     i = 0;
     min = 1;
     max = 10;
-    //size = max - min;
     int *res1 = ft_ultimate_range(nb, min, max);
     while (i < nb)
     {
