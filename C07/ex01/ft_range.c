@@ -14,7 +14,7 @@ if (min >= max)
 {
     return (NULL);
 }
-tab = malloc((min) * sizeof(int));
+tab = malloc((max) * sizeof(int));
 if (tab == NULL)
 {
     return (NULL);
