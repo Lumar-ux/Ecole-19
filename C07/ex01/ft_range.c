@@ -5,17 +5,18 @@
 
 int *ft_range(int min, int max)
 {
-    int tab;
-    int i;
+    int *tab;
     int cmp;
+    int i;
 
     i = 0;
-    cmp = max - min;
+    
 if (min >= max)
 {
     return (NULL);
 }
-tab = (int *) malloc((cmp) * sizeof(int));
+cmp = max - min;
+tab = malloc((cmp) * sizeof(int));
 if (tab == NULL)
 {
     return (0);
