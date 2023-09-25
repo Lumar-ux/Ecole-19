@@ -14,10 +14,10 @@ if (min >= max)
 {
     return (NULL);
 }
-tab = malloc((max) * sizeof(int));
+tab = (int *) malloc((max) * sizeof(int));
 if (tab == NULL)
 {
-    return (NULL);
+    return (0);
 }
 while (min < max)
 {
