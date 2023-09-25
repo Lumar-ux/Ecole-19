@@ -17,28 +17,30 @@ int ft_strlen(char *src)
 char *ft_strdup(char *src)
 {
    char *dest;
-   char *som;
+   int i;
+   //char *som;
 
-   som = dest;
-   dest = malloc(ft_strlen(src + 1) * sizeof(char));
+   //som = *dest;
+   i = 0;
+   dest[i] = malloc((ft_strlen(src) + 1) * sizeof(char));
    if (!dest)
    {
     return (NULL);
    }
-   if (*src != '\0')
+   while (src[i] != '\0')
    {
-    *dest = *src;
-    dest++;
-    src++;
+    dest[i] = src[i];
+   i++;
    }
-   *dest = '\0';
-   return (som);
+   dest[i] = '\0';
+   return (dest);
 }
 
 int main()
 {
     char *src = "hello";
-    printf("%s", ft_strdup(src));
-    free(src);
+    char *res1 = ft_strdup(src);
+    printf("%s", res1);
+    free(res1);
     return (0);
 }
