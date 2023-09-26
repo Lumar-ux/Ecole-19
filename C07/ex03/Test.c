@@ -14,9 +14,9 @@ int ft_strlen(char **strs)
             j++;
         }
         i++;
-        j = 0; // Réinitialiser j pour le prochain tableau de caractères
+        j = 0;
     }
-    return i; // Retourner le nombre total de chaînes dans strs
+    return i;
 }
 
 char *ft_strjoin(int size, char **strs)
@@ -28,16 +28,17 @@ char *ft_strjoin(int size, char **strs)
   i = 0;
   j = 0;
 
-    for (int i = 0; i < size; i++)
+    while (i < size)
     {
-        total_len += ft_strlen(&strs[i]); // Calculer la longueur totale des chaînes
+        total_len += ft_strlen(&strs[i]);
+        i++;
     }
 
-    char *result = (char *)malloc(total_len + 1); // Allouer de la mémoire pour le résultat (+1 pour le caractère de fin de chaîne)
+    char *result = (char *)malloc(total_len + 1);
 
     if (result == NULL)
     {
-        return NULL; // Vérifier si l'allocation a réussi
+        return NULL;
     }
 
     int index = 0;
@@ -61,7 +62,7 @@ int main()
 {
     char *str1[] = {"hello", "world", "!"};
 
-    int sizech = ft_strlen(str1); // Correction : Supprimer l'adresse de &str1
+    int sizech = ft_strlen(str1);
 
     char *resultat = ft_strjoin(sizech, str1);
 
@@ -70,10 +71,5 @@ int main()
         printf("%s\n", resultat);
         free(resultat);
     }
-    else
-    {
-        printf("Erreur d'allocation de mémoire.\n");
-    }
-
     return 0;
 }
