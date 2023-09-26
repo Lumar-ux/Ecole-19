@@ -13,17 +13,18 @@ int ft_ultimate_range(int **range, int min, int max)
     
 if (min >= max)
 {
-    return (NULL);
+    *range = NULL;
+    return (0);
 }
 size = max - min;
-range = malloc((size) * sizeof(int));
-if (range == NULL)
+*range = malloc((size) * sizeof(int));
+if (*range == NULL)
 {
     return (0);
 }
 while (min < max)
 {
-    range[i] = min;
+    (*range)[i] = min;
     i++;
     min++;
 }
@@ -34,17 +35,21 @@ int main()
     int i;
     int min;
     int max;
-    int *nb[];
+    int *res1 = NULL;
+    //int *nb[];
     
     i = 0;
     min = 1;
     max = 10;
-    int *res1 = ft_ultimate_range(nb, min, max);
-    while (i < nb)
+    int size = ft_ultimate_range(&res1, min, max);
+   if(size != 0)
+   {
+    while (i < size)
     {
     printf("%d\n", res1[i]);
     i++;
     }
     free(res1);
     return (0);
+}
 }
