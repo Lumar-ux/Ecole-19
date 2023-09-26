@@ -11,14 +11,6 @@ int ft_sqrt(int nb)
 
     mul = 1;
     covnb = nb;
-    /*mulsup = 1;
-    i = 1;
-    power = 4;
-while (i <= power)
-{
-    mulsup = mulsup * covnb;
-    i++;
-}*/
 while (mul * mul <= covnb) 
     {
         if (mul * mul == covnb) 
