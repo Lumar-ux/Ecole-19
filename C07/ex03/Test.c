@@ -2,74 +2,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_strlen(char **strs)
+int ft_strlen(char *str)
 {
-    int i = 0;
     int j = 0;
 
-    while (i < 3)
+    while (str[j] != '\0')
     {
-        while (strs[i][j] != '\0')
-        {
-            j++;
-        }
-        i++;
-        j = 0;
+        j++;   
     }
-    return i;
+
+    return j;
 }
 
 char *ft_strjoin(int size, char **strs)
 {
     int total_len = 0;
-  int i;
-  int j;
+    int in = 0;
 
-  i = 0;
-  j = 0;
-
-    while (i < size)
+    for (int i = 0; i < size; i++)
     {
-        total_len += ft_strlen(&strs[i]);
-        i++;
+        total_len += ft_strlen(strs[i]);
     }
 
-    char *result = (char *)malloc(total_len + 1);
+    char *res = (char *)malloc((total_len + 1) * sizeof(char)); // Correction : Ajout de 1 pour le caractère nul
 
-    if (result == NULL)
+    if (res == NULL)
     {
         return NULL;
     }
 
-    int index = 0;
-
-    while (i < size)
+    for (int i = 0; i < size; i++)
     {
-    i++;
-        while (strs[i][j] != '\0')
+        for (int j = 0; strs[i][j] != '\0'; j++)
         {
-         j++;
-            result[index++] = strs[i][j];
+            res[in++] = strs[i][j];
         }
     }
 
-    result[index] = '\0';
+    res[in] = '\0';
 
-    return result;
+    return res;
 }
 
 int main()
 {
     char *str1[] = {"hello", "world", "!"};
 
-    int sizech = ft_strlen(str1);
+    char *res = ft_strjoin(3, str1);
 
-    char *resultat = ft_strjoin(sizech, str1);
-
-    if (resultat != NULL)
+    if (res != NULL)
     {
-        printf("%s\n", resultat);
-        free(resultat);
+        printf("%s\n", res);
+        free(res);
     }
+    else
+    {
+        printf("Erreur d'allocation de mémoire.\n");
+    }
+
     return 0;
 }
