@@ -18,10 +18,12 @@ char *ft_strjoin(int size, char **strs)
 {
     int total_len = 0;
     int in = 0;
+    int i = 0;
 
-    for (int i = 0; i < size; i++)
+    while (i < size)
     {
         total_len += ft_strlen(strs[i]);
+    i++;
     }
 
     char *res = (char *)malloc((total_len + 1) * sizeof(char)); // Correction : Ajout de 1 pour le caractère nul
@@ -31,11 +33,13 @@ char *ft_strjoin(int size, char **strs)
         return NULL;
     }
 
-    for (int i = 0; i < size; i++)
+    while (i < size)
     {
-        for (int j = 0; strs[i][j] != '\0'; j++)
+        i++;
+        while (strs[i][j] != '\0')
         {
             res[in++] = strs[i][j];
+            j++;
         }
     }
 
@@ -54,11 +58,6 @@ int main()
     {
         printf("%s\n", res);
         free(res);
-    }
-    else
-    {
-        printf("Erreur d'allocation de mémoire.\n");
-    }
 
     return 0;
 }
