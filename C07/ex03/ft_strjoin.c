@@ -48,29 +48,17 @@ int main()
     int i;
     char **str1; 
     
-    str1 = malloc((3) * sizeof(char));
-    str1[0] = (char *) malloc((5) * sizeof(char));
-    str1[1] = (char *) malloc((5) * sizeof(char));
-    str1[2] = (char *) malloc((1) * sizeof(char));
+    str1 = (char **)malloc(3 * sizeof(char));
+    str1[0] = (char *) malloc(5 * sizeof(char));
+    str1[1] = (char *) malloc(5 * sizeof(char));
+    str1[2] = (char *) malloc(1 * sizeof(char));
     str1[0] = "hello";
     str1[1] = "world";
     str1[2] = "!";
-    //char *sep[i] = ",";
-    int *total_len = ft_strlen(&str1[0]) + ft_strlen(&str1[1]) + ft_strlen(&str1[3]);
-    
-    i = 0;
-    int sizech = ft_strjoin(total_len, str1);
-    if (sizech != 0)
-    {
-    while (i < sizech)
-    {
-    printf("%s", str1[i]);
-    i++;
-    }
-    free(str1);
-    free(str1[0]);
-    free(str1[1]);
-    free(str1[2]);
+    char *sep = ",";
+    char *res = ft_strjoin(3, str1/*,sep*/);
+    printf("%s", res);
+    free(res);
     return (0);
     }
 }
