@@ -50,14 +50,19 @@ char *ft_strjoin(int size, char **strs)
 
 int main()
 {
+    int i = 0;
     char *str1[] = {"hello", "world", "!"};
-
-    char *res = ft_strjoin(3, str1);
+    //char *sep[] = {','};
+    char *res = ft_strjoin(3, str1/*,sep*/);
 
     if (res != NULL)
     {
-        printf("%s\n", res);
-        free(res);
-
-    return 0;
+    while (i <= 3)
+    {
+    printf("%s", res);
+    i++;
+    }
+    }
+    free(res);
+    return (0);
 }
