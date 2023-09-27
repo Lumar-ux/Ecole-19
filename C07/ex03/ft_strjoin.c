@@ -49,9 +49,9 @@ int main()
     char **str1; 
     
     str1 = malloc((3) * sizeof(char));
-    str1[0] = malloc((5) * sizeof(char));
-    str1[1] = malloc((5) * sizeof(char));
-    str1[2] = malloc((1) * sizeof(char));
+    str1[0] = (char *) malloc((5) * sizeof(char));
+    str1[1] = (char *) malloc((5) * sizeof(char));
+    str1[2] = (char *) malloc((1) * sizeof(char));
     str1[0] = "hello";
     str1[1] = "world";
     str1[2] = "!";
