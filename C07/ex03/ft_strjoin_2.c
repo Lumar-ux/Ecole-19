@@ -16,7 +16,7 @@ int ft_strlen(char **strs)
         i++;
         j = 0;
     }
-    return (i);
+    return (j);
 }
 
 char *ft_strjoin(int size, char **strs)
